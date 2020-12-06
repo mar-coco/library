@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+</head>
+<body>
+
+<!-- <script src="function.js"></script> -->
+<script>
+function book(title, author, pages, read) {
+    this.title = title 
+    this.author = author
+    this.pages = pages
+    this.read = read
+    this.info = function() {
+        output = (title + " by " + author + ", " + pages + " pages, " + read) 
+        return output 
+        console.log(output)
+    }
+}
+</script>
+
+</body>
+</html>
