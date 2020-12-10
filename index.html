@@ -7,20 +7,54 @@
   <meta charset="UTF-8"/>
 </head>
 <body>
-
+    <div>Coco's Library</div>
+    Title: <input type="text" id='title'>
+    Author: <input type="text" id='author'>
+    Pages: <input type="text" id='pages'>
+    Read: <input type="text" id='read'>
+    <input type="submit" id='submit'>
+  <table></table>
 <!-- <script src="function.js"></script> -->
 <script>
-function book(title, author, pages, read) {
+let myLibrary = [
+    { title: 'One Piece', author: 'Oda Sensei', pages: 1000, read: true }
+    , { title: 'Solo Leveling', author: 'Webtoon', pages: 150, read: false }
+    ];
+
+//set up the DOM elements
+const title = document.getElementById("title")
+const author = document.getElementById("author")
+const pages = document.getElementById("pages")
+const read = document.getElementById("read")
+
+//create new book function
+function Book(title, author, pages, read) {
     this.title = title 
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function() {
-        output = (title + " by " + author + ", " + pages + " pages, " + read) 
-        return output 
-        console.log(output)
     }
+
+//add new book based on inputs/alerts
+function addBookToLibrary() {
+  //add book
+  newBookTitle = title.value;
+  newBookAuthor = author.value;
+  newBookPages = pages.value;
+  newBookRead = read.value;
+  newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead)
+  myLibrary.push(newBook)
+  //clear inputs
+  title.value = ''
+  author.value = ''
+  pages.value = ''
+  read.value = ''
 }
+
+//link addBookToLibrary to submit button
+
+//display myLibrary using only JS
+
 </script>
 
 </body>
