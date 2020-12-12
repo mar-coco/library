@@ -1,0 +1,10 @@
+#bookCard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+    margin: 15px 0px 0px 10px;
+    width: 50%;   
+}
+
+.bookCard:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }

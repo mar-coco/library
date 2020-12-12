@@ -14,12 +14,28 @@
     Read: <input type="text" id='read'>
     <input type="submit" id='submit'>
   <table></table>
+  <div id='library'><br>Library</div>
 <!-- <script src="function.js"></script> -->
 <script>
 let myLibrary = [
     { title: 'One Piece', author: 'Oda Sensei', pages: 1000, read: true }
     , { title: 'Solo Leveling', author: 'Webtoon', pages: 150, read: false }
     ];
+
+function addBookToDOM() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    const newBook = document.createElement("div");
+    newBook.id = 'bookCard';
+    const keys = Object.keys(myLibrary[i]);
+    for (key of keys) {
+      newBook.innerHTML += key.charAt(0).toUpperCase() + key.slice(1) + ': ' + myLibrary[i][key] + '<br>';
+    }
+    document.getElementById("library").appendChild(newBook);
+  }  
+}
+
+//initializing the library
+addBookToDOM() 
 
 //set up the DOM elements
 const title = document.getElementById("title")
@@ -53,7 +69,7 @@ function addBookToLibrary() {
 
 //link addBookToLibrary to submit button
 
-//display myLibrary using only JS
+//way to delete book, remove from myLibrary and delete specifc book and remake from scratch
 
 </script>
 
